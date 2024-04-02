@@ -11,6 +11,7 @@
             @endif
             <div class="card-body">
               <p class="card-text text-center fw-bold fs-3">{{$project->slug}}</p>
+              <p class="card-text text-center fw-bold fs-3">{{$project->type ? $project->type->name : 'Non ci sono tipologie'}}</p>
               <p class="card-text text-center">{{$project->content}}</p>
             </div>
           </div>
