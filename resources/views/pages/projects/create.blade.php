@@ -25,6 +25,18 @@
         </div>
 
         <div class="mb-3">
+            <label for="type_id" class="form-label fw-bold">Seleziona una tipologia</label>
+            <select class="form-select @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
+                <option selected>Seleziona una tipologia</option>
+                @foreach ($types as $item)
+                <option value="{{$item->id}}"
+                    {{$item->id == old('type_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                @endforeach
+              </select>
+        </div>
+
+
+        <div class="mb-3">
             <label for="content" class="form-label fw-bold">Descrizione</label>
             <textarea class="form-control" name="content" id="content" rows="3"></textarea>
             @error('content')
